@@ -13,7 +13,7 @@ class Card3 extends StatelessWidget {
         constraints: const BoxConstraints.expand(width: 350, height: 450),
         decoration: BoxDecoration(
           image: const DecorationImage(
-              image: AssetImage('assets/mag2.png'), fit: BoxFit.cover),
+              image: AssetImage('assets/moon_bg.jpg'), fit: BoxFit.cover),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Stack(
@@ -38,7 +38,7 @@ class Card3 extends StatelessWidget {
                     height: 8,
                   ),
                   Text(
-                    'Recipe Trend',
+                    'MoreOver',
                     style: FooderlichTheme.darkTextTheme.headline6,
                   ),
                   const SizedBox(
@@ -53,70 +53,70 @@ class Card3 extends StatelessWidget {
                           print('on chip deleted');
                         },
                         label: Text(
-                          'healthy',
+                          '타로',
                           style: FooderlichTheme.darkTextTheme.bodyText1,
                         ),
                       ),
 
                       Chip(
                         label: Text(
-                          'Vegan',
+                          '주간 로또운',
                           style: FooderlichTheme.darkTextTheme.bodyText1,
                         ),
                       ),
 
                       Chip(
                         label: Text(
-                          'Carrots',
+                          '꿈풀이',
                           style: FooderlichTheme.darkTextTheme.bodyText1,
                         ),
                       ),
 
                       Chip(
                         label: Text(
-                          'Greens',
+                          '토정비결',
                           style: FooderlichTheme.darkTextTheme.bodyText1,
                         ),
                       ),
 
                       Chip(
                         label: Text(
-                          'Wheat',
+                          '신년운세',
                           style: FooderlichTheme.darkTextTheme.bodyText1,
                         ),
                       ),
 
                       Chip(
                         label: Text(
-                          'Pescetarian',
+                          '혈액형운세',
                           style: FooderlichTheme.darkTextTheme.bodyText1,
                         ),
                       ),
 
                       Chip(
                         label: Text(
-                          'Mint',
+                          'MBTI 운세',
                           style: FooderlichTheme.darkTextTheme.bodyText1,
                         ),
                       ),
 
                       Chip(
                         label: Text(
-                          'Lemongrass',
+                          '십이간지 운세',
                           style: FooderlichTheme.darkTextTheme.bodyText1,
                         ),
                       ),
 
                       Chip(
                         label: Text(
-                          'Salad',
+                          '인생풀이',
                           style: FooderlichTheme.darkTextTheme.bodyText1,
                         ),
                       ),
 
                       Chip(
                         label: Text(
-                          'Water',
+                          '오늘의 급소',
                           style: FooderlichTheme.darkTextTheme.bodyText1,
                         ),
                       ),

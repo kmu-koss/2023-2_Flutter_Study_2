@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
           title: Text(
-        'Fooderlich',
+        'Fortune Telling',
         style: Theme.of(context).textTheme.titleLarge,
       )),
       body: pages[_selectedIndex],

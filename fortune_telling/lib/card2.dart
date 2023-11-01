@@ -1,60 +1,58 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-import 'author_card.dart';
+import 'graph.dart';
 import 'fooderlich_theme.dart';
 
-class Card2 extends StatelessWidget {
+class Card2 extends StatefulWidget {
   const Card2({Key? key}) : super(key: key);
 
-  final String name = 'Mike Katz';
-  final String nickname = 'Smoothie Connoisseur';
-  final String food = 'Smoothies';
-  final String info = 'Recipe';
+  @override
+  State<Card2> createState() => _Card2State();
+}
+
+class _Card2State extends State<Card2> {
+  final String info = 'Fortune';
+  final List<String> Constellation= ['none', 'Aquarius', 'Pisces', 'Aries', 'Gemini', '''
+Taurus''', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpip', 'Sagittarius', 'Capricorn'];
+  double order = 1;
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-          padding: const EdgeInsets.all(16),
-          constraints: const BoxConstraints.expand(width: 350, height: 450),
-          decoration: BoxDecoration(
-            image: const DecorationImage(
-                image: AssetImage('assets/mag5.png'), fit: BoxFit.cover),
-            borderRadius: BorderRadius.circular(16),
-          ),
-          child: Column(
-            children: [
-              const AuthorCard(
-                authorName: 'Mike Katz',
-                title: 'Smoothie Consecutr',
-                imageProvider: AssetImage('assets/author_katz.jpeg'),
-              ),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 32.0),
-                      child: RotatedBox(
-                        quarterTurns: -1,
-                        child: Text(
-                          'Smoothie',
-                          style: Theme.of(context).textTheme.headline1,
-                        ),
-                      ),
-                    ),
-                    Text(
-                      'recipes',
-                      style: Theme.of(context).textTheme.headline1,
-                    )
-                  ],
-                ),
-              )
-            ],
-          )),
+        padding: const EdgeInsets.all(16),
+        constraints: const BoxConstraints.expand(width: 350, height: 450),
+        decoration: BoxDecoration(
+          image:  DecorationImage(
+              image: AssetImage('assets/${order.toInt()}.jpg'), fit: BoxFit.cover),
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 50,
+            ),
+            const Expanded(
+              child: Text('''
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'''),
+            ),
+            Slider(
+                value: order,
+                label: Constellation[order.toInt()],
+                min: 1,
+                max: 12,
+                divisions: 11,
+                onChanged: (value) {
+                  print('$order');
+                  setState(() {
+                    order = value;
+                  });
+                }),
+          ],
+
+        ),
+      ),
     );
   }
 }

@@ -13,7 +13,7 @@ class RecipeDetail extends StatefulWidget {
 }
 
 class _RecipeDetailState extends State<RecipeDetail> {
-  double volume = 1.0;
+  double multiplier = 1.0;
 
   @override
   Widget build(BuildContext context) {
@@ -41,19 +41,19 @@ class _RecipeDetailState extends State<RecipeDetail> {
                   itemBuilder: (BuildContext context, int index) {
                     final ingredient = widget.recipe.ingredients[index];
                     return Text(
-                        "${ingredient.quantity} ${ingredient.measure} ${ingredient.name}");
+                        "${ingredient.quantity * multiplier} ${ingredient.measure} ${ingredient.name}");
                   }),
             ),
             Slider(
-                value: volume,
-                label: volume.toString(),
+                value: multiplier,
+                label: '${widget.recipe.serving * multiplier.toInt()} 인분',
                 min: 1.0,
                 max: 10.0,
                 divisions: 9,
                 onChanged: (value) {
-                  print("$volume");
+                  print("$multiplier");
                   setState(() {
-                    volume = value;
+                    multiplier = value;
                   });
                 })
           ],
