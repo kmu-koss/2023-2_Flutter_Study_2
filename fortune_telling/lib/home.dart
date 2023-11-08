@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fooderlich/card1.dart';
-import 'package:fooderlich/card2.dart';
-import 'package:fooderlich/card3.dart';
+import 'package:fortune_telling/screen/fortune_screen.dart';
+import 'package:fortune_telling/screen/card2.dart';
+import 'package:fortune_telling/screen/card3.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -14,7 +14,8 @@ class _HomeState extends State<Home> {
   int _selectedIndex = 0;
 
   static List<Widget> pages = <Widget>[
-    Card1(),
+    // Card1(),
+    FortuneScreen(),
     Card2(),
     Card3(),
   ];
@@ -28,10 +29,11 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text(
-        'Fortune Telling',
-        style: Theme.of(context).textTheme.titleLarge,
-      )),
+        title: Text(
+          'Fortune Telling',
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
+      ),
       body: pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         onTap: (int index) => _onItemClick(index),
@@ -40,7 +42,7 @@ class _HomeState extends State<Home> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.content_paste_outlined),
-            label: 'Today Forutne',
+            label: 'Forutne Telling',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.star_outline_rounded),

@@ -1,4 +1,4 @@
-# fooderlich
+# fortune_telling
 
 A new Flutter project.
 

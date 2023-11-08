@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-import 'graph.dart';
-import 'fooderlich_theme.dart';
+import '../graph.dart';
+import '../fortune_telling_theme.dart';
 
 class Card2 extends StatefulWidget {
   const Card2({Key? key}) : super(key: key);

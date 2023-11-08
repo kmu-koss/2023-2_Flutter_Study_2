@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fooderlich/fooderlich_theme.dart';
+import '../fortune_telling_theme.dart';
 
-import 'main.dart';
+import '../main.dart';
 
 class Card3 extends StatelessWidget {
   const Card3({super.key});
@@ -39,7 +39,7 @@ class Card3 extends StatelessWidget {
                   ),
                   Text(
                     'MoreOver',
-                    style: FooderlichTheme.darkTextTheme.headline6,
+                    style: FortuneTellingTheme.darkTextTheme.headline6,
                   ),
                   const SizedBox(
                     height: 16,
@@ -54,70 +54,70 @@ class Card3 extends StatelessWidget {
                         },
                         label: Text(
                           '타로',
-                          style: FooderlichTheme.darkTextTheme.bodyText1,
+                          style: FortuneTellingTheme.darkTextTheme.bodyText1,
                         ),
                       ),
 
                       Chip(
                         label: Text(
                           '주간 로또운',
-                          style: FooderlichTheme.darkTextTheme.bodyText1,
+                          style: FortuneTellingTheme.darkTextTheme.bodyText1,
                         ),
                       ),
 
                       Chip(
                         label: Text(
                           '꿈풀이',
-                          style: FooderlichTheme.darkTextTheme.bodyText1,
+                          style: FortuneTellingTheme.darkTextTheme.bodyText1,
                         ),
                       ),
 
                       Chip(
                         label: Text(
                           '토정비결',
-                          style: FooderlichTheme.darkTextTheme.bodyText1,
+                          style: FortuneTellingTheme.darkTextTheme.bodyText1,
                         ),
                       ),
 
                       Chip(
                         label: Text(
                           '신년운세',
-                          style: FooderlichTheme.darkTextTheme.bodyText1,
+                          style: FortuneTellingTheme.darkTextTheme.bodyText1,
                         ),
                       ),
 
                       Chip(
                         label: Text(
                           '혈액형운세',
-                          style: FooderlichTheme.darkTextTheme.bodyText1,
+                          style: FortuneTellingTheme.darkTextTheme.bodyText1,
                         ),
                       ),
 
                       Chip(
                         label: Text(
                           'MBTI 운세',
-                          style: FooderlichTheme.darkTextTheme.bodyText1,
+                          style: FortuneTellingTheme.darkTextTheme.bodyText1,
                         ),
                       ),
 
                       Chip(
                         label: Text(
                           '십이간지 운세',
-                          style: FooderlichTheme.darkTextTheme.bodyText1,
+                          style: FortuneTellingTheme.darkTextTheme.bodyText1,
                         ),
                       ),
 
                       Chip(
                         label: Text(
                           '인생풀이',
-                          style: FooderlichTheme.darkTextTheme.bodyText1,
+                          style: FortuneTellingTheme.darkTextTheme.bodyText1,
                         ),
                       ),
 
                       Chip(
                         label: Text(
                           '오늘의 급소',
-                          style: FooderlichTheme.darkTextTheme.bodyText1,
+                          style: FortuneTellingTheme.darkTextTheme.bodyText1,
                         ),
                       ),
                     ],

@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:fooderlich/fooderlich_theme.dart';
-import 'package:fooderlich/home.dart';
+
+import 'fortune_telling_theme.dart';
+import 'home.dart';
+
 
 void main() {
   // 1
-  runApp(const Fooderlich());
+  runApp(const FortuneTelling());
 }
 
-class Fooderlich extends StatelessWidget {
+class FortuneTelling extends StatelessWidget {
   // 2
-  const Fooderlich({super.key});
+  const FortuneTelling({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final theme = FooderlichTheme.dark();
+    final theme = FortuneTellingTheme.dark();
     // 3
     return MaterialApp(
       theme: theme,

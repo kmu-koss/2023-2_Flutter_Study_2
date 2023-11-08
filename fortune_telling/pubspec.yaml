@@ -1,5 +1,5 @@
-name: fooderlich
-description: a social Fortune app to keep track of new dishes, and share with friends.
+name: fortune_telling
+description: my 1st flutter project
 
 publish_to: "none"
 version: 1.0.0+1
@@ -12,6 +12,8 @@ dependencies:
     sdk: flutter
   google_fonts: ^6.1.0
   charts_flutter: ^0.12.0
+  intl: ^0.17.0
+  http: ^1.1.0
 
 dev_dependencies:
   flutter_test:

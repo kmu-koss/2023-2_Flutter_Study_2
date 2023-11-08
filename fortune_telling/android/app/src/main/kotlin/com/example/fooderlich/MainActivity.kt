@@ -1,4 +1,4 @@
-package com.example.fooderlich
+package com.example.fortune_telling
 
 import io.flutter.embedding.android.FlutterActivity
 
