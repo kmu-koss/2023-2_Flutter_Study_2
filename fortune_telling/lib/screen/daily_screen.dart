@@ -1,8 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import '../model/daily_fortune_model.dart';
-import 'datily_fortune_detail.dart';
+import '../model/model.dart';
+import 'screen.dart';
 import '../fortune_telling_theme.dart';
 
 class FortuneScreen extends StatelessWidget {
@@ -30,7 +30,9 @@ class FortuneScreen extends StatelessWidget {
                   builder: (context) {
                     return FortuneDetail(
                       //Todo data 채워야함.
-                      fortuneBundle: FortuneBundle.samples[index],
+                      // fortuneBundle: StaticDailyFortuneBundle.samples[index],
+                      info: Info(),
+                      choice: index,
                     );
                   },
                 ),

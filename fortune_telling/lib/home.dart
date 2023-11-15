@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fortune_telling/screen/fortune_screen.dart';
+import 'package:fortune_telling/screen/daily_screen.dart';
 import 'package:fortune_telling/screen/card2.dart';
 import 'package:fortune_telling/screen/card3.dart';
 

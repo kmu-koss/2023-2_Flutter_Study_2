@@ -20,9 +20,7 @@ class ExploreScreen extends StatelessWidget {
             const SizedBox(height: 16),
             FriendPostListView(friendPosts: snapshot.data?.friendPosts ?? [])
           ]);
-        } else {
-          return const Center(child: CircularProgressIndicator());
-        }
+        } else {}
       },
     );
   }
