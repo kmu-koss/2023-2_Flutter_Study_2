@@ -24,10 +24,8 @@ class FortuneService {
     // todo get json from internet
     // Load json from file system
     final dataString =
+    await _loadAsset('assets/sample_data/sample_daily_fortune.json');
 
-    await _loadAsset('assets/sample_data/sample_daily_fortune.json').then((dataString){
-      print(dataString);
-    });
     // Decode to json
     final Map<String, dynamic> json = jsonDecode(dataString);
     // Go through each recipe and convert json to ExploreRecipe object.

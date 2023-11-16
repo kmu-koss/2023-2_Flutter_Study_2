@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'fooderlich_theme.dart';
 import 'home.dart';
+import 'models/grocery_manager.dart';
 import 'models/tab_manager.dart';
 
 void main() {
@@ -16,17 +16,17 @@ class Fooderlich extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = FooderlichTheme.light();
     return MaterialApp(
-      theme: theme,
-      title: 'Fooderlich',
-      // TODO: Replace this with MultiProvider
-      home: ChangeNotifierProvider<TabManger>(
-        create:(context){
-          return TabManger();
-        },
-          builder: (BuildContext context, Widget? child) {
-          return const Home();
-        }
-      ),
+        theme: theme,
+        title: 'Fooderlich',
+        // TODO: Replace this with MultiProvider
+        home: MultiProvider(
+            providers: [
+              ChangeNotifierProvider<TabManger>(
+                  create: (context) => TabManger()),
+              ChangeNotifierProvider<GroceryManager>(
+                  create: (context) => GroceryManager()),
+            ],
+            child: const Home()),
     );
   }
 }
