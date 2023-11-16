@@ -1,0 +1,32 @@
+name: fortune_telling
+description: my 1st flutter project
+
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.5 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  google_fonts: ^6.1.0
+  charts_flutter: ^0.12.0
+  intl: ^0.17.0
+  http: ^1.1.0
+  html: ^0.15.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/background/
+    - assets/icon/
+    - assets/constellation/
+    - assets/sample_data/
