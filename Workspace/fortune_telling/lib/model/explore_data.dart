@@ -2,10 +2,10 @@ import 'model.dart';
 
 class ExploreData {
   // final List<Constellation> constellationFortunes;
-  final List<DynamicDailyFortunes> listDailyFortunes;
+  final DynamicDailyFortunes dailyFortunes;
 
   ExploreData(
       // this.constellationFortunes,
-      this.listDailyFortunes,
+      this.dailyFortunes,
       );
 }

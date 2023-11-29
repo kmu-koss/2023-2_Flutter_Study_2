@@ -9,7 +9,7 @@ import 'components.dart';
 
 class FortuneCard extends StatefulWidget {
   // final StaticDailyFortune fortune;
-  final DynamicDailyFortune fortune;
+  final DynamicEachFortune fortune;
   const FortuneCard({super.key, required this.fortune});
 
   @override
@@ -52,7 +52,7 @@ class _FortuneCardState extends State<FortuneCard> {
                     ),
                     Center(
                       child: Text(
-                        '${widget.fortune.score}점',
+                        '??점',
                         style: Theme.of(context).textTheme.displayMedium,
                       ),
                     ),

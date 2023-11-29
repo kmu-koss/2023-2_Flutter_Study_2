@@ -26,7 +26,8 @@ class FortuneDetail extends StatefulWidget {
 }
 
 class _FortuneDetailState extends State<FortuneDetail> {
-  late final _dynamicDailyFortune;
+  late var _dynamicDailyFortuneInfo;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,63 +48,71 @@ class _FortuneDetailState extends State<FortuneDetail> {
         child: FutureBuilder(
           future: widget.fortuneService.getExploreData(),
           builder: (context, AsyncSnapshot<ExploreData> snapshot) {
-            if (snapshot.connectionState == ConnectionState.done &&
-                snapshot.hasData){
-              _dynamicDailyFortune = snapshot.data?.
-              listDailyFortunes[widget.choice] ?? '';
-              return Column(
-                children: [
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    _dynamicDailyFortune.date,
-                    style: Theme.of(context).textTheme.displayLarge,
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  SizedBox(
-                    height: 500,
-                    child: ListView.separated(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (BuildContext context, int index) {
-                        // body: ListView.separated(
-                        return _buildCard(
-                          _dynamicDailyFortune.content[index] ??
-                              DynamicDailyFortune(),
-                        );
-                      },
-                      separatorBuilder: (BuildContext context, int index) {
-                        return const SizedBox(
-                          width: 16,
-                        );
-                      },
-                      itemCount: _dynamicDailyFortune.content.length
-                          ?? 1,
+            try {
+              if (snapshot.connectionState == ConnectionState.done &&
+                  snapshot.hasData) {
+                _dynamicDailyFortuneInfo =
+                    snapshot.data?.dailyFortunes.contents?[widget.choice] ?? '';
+                debugPrint(_dynamicDailyFortuneInfo);
+                return Column(
+                  children: [
+                    const SizedBox(
+                      height: 10,
                     ),
-                  ),
-                ],
+                    Text(
+                      _dynamicDailyFortuneInfo.date,
+                      style: Theme.of(context).textTheme.displayLarge,
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    SizedBox(
+                      height: 500,
+                      child: ListView.separated(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (BuildContext context, int index) {
+                          return _buildCard(
+                            _dynamicDailyFortuneInfo.dailyContent.length > index
+                                ? _dynamicDailyFortuneInfo.dailyContent[index]
+                                : DynamicEachFortune(),
+                          );
+                        },
+                        separatorBuilder: (BuildContext context, int index) {
+                          return const SizedBox(
+                            width: 16,
+                          );
+                        },
+                        itemCount: _dynamicDailyFortuneInfo.content.length ?? 1,
+                      ),
+                    ),
+                  ],
+                );
+              } else {
+                return const Center(child: CircularProgressIndicator());
+              }
+            } catch (e) {
+              // Handle any exceptions here
+              debugPrint('Error in building UI: $e');
+              debugPrint(
+                  '${snapshot.data?.dailyFortunes.contents?[0]}');
+              return const Center(
+                child: Text('An error occurred while building UI.'),
               );
-            }else{
-              return const Center(child: CircularProgressIndicator());
             }
-          }
+          },
         ),
       ),
     );
-
-    // throw UnimplementedError();
   }
+}
 
-  Widget _buildCard(DynamicDailyFortune fortune) {
-    try {
-      return FortuneCard(
-        fortune: fortune,
-      );
-    } catch(e) {
-      throw Exception('This card does not exist');
-    }
+Widget _buildCard(DynamicEachFortune fortune) {
+  try {
+    return FortuneCard(
+      fortune: fortune,
+    );
+  } catch (e) {
+    throw Exception('This card does not exist');
   }
 }
