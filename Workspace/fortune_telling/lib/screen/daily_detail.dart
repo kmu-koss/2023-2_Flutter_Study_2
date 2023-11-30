@@ -75,7 +75,8 @@ class _FortuneDetailState extends State<FortuneDetail> {
                           return _buildCard(
                             _dynamicDailyFortuneInfo.dailyContent.length > index
                                 ? _dynamicDailyFortuneInfo.dailyContent[index]
-                                : DynamicEachFortune(),
+                                : DynamicEachFortune(
+                                    idx: 0, name: '', desc: '', keyword: ''),
                           );
                         },
                         separatorBuilder: (BuildContext context, int index) {
@@ -94,8 +95,7 @@ class _FortuneDetailState extends State<FortuneDetail> {
             } catch (e) {
               // Handle any exceptions here
               debugPrint('Error in building UI: $e');
-              debugPrint(
-                  '${snapshot.data?.dailyFortunes.contents?[0]}');
+              debugPrint('${snapshot.data?.dailyFortunes.contents?[0]}');
               return const Center(
                 child: Text('An error occurred while building UI.'),
               );
@@ -110,7 +110,7 @@ class _FortuneDetailState extends State<FortuneDetail> {
 Widget _buildCard(DynamicEachFortune fortune) {
   try {
     return FortuneCard(
-      fortune: fortune,
+      d_fortune: fortune,
     );
   } catch (e) {
     throw Exception('This card does not exist');

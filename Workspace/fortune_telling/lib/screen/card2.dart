@@ -22,7 +22,7 @@ Taurus''', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpip', 'Sagittarius', 'Caprico
     return Center(
       child: Container(
         padding: const EdgeInsets.all(16),
-        constraints: const BoxConstraints.expand(width: 350, height: 450),
+        constraints: const BoxConstraints.expand(width: 350, height: 600),
         decoration: BoxDecoration(
           image:  DecorationImage(
               image: AssetImage('assets/constellation/${order.toInt()}.jpg'), fit: BoxFit.cover),

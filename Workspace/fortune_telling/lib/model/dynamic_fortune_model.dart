@@ -18,18 +18,9 @@ class DynamicDailyFortunes {
     try {
       return DynamicDailyFortunes(
         contents: <DynamicDailyFortuneInfo>[
-              DynamicDailyFortuneInfo.fromJson(parsedJson['day']),
-              DynamicDailyFortuneInfo.fromJson(parsedJson['tomorrow']),
-            ] ??
-            <DynamicDailyFortuneInfo>[
-              DynamicDailyFortuneInfo(
-                title: 'title',
-                date: 'date',
-                dailyContent: <DynamicEachFortune>[
-                  DynamicEachFortune(),
-                ],
-              )
-            ],
+          DynamicDailyFortuneInfo.fromJson(parsedJson['day']),
+          DynamicDailyFortuneInfo.fromJson(parsedJson['tomorrow']),
+        ],
       );
     } catch (e) {
       // 예외가 발생한 경우 실행되는 블록
@@ -40,7 +31,7 @@ class DynamicDailyFortunes {
             title: 'title',
             date: 'date',
             dailyContent: <DynamicEachFortune>[
-              DynamicEachFortune(),
+              DynamicEachFortune(idx: 0, name: '', desc: '', keyword: ''),
             ],
           ),
         ],
@@ -49,8 +40,8 @@ class DynamicDailyFortunes {
       // 예외 발생 여부와 관계없이 항상 실행되는 블록
       debugPrint('DynamicDailyFortunes fromJson 메소드 완료');
       debugPrint('${parsedJson['day']}');
-      debugPrint(
-          '${DynamicDailyFortuneInfo.fromJson(parsedJson['day']).dailyContent[0].name}');
+      debugPrint('''
+${DynamicDailyFortuneInfo.fromJson(parsedJson['day']).dailyContent?[0].name}''');
     }
   }
 
@@ -95,6 +86,7 @@ class DynamicDailyFortuneInfo {
                 idx: 0,
                 name: '',
                 desc: '',
+                keyword: '',
               )
             ],
       );
@@ -110,6 +102,7 @@ class DynamicDailyFortuneInfo {
             idx: 0,
             name: '',
             desc: '',
+            keyword: '',
           )
         ],
       );
@@ -133,6 +126,7 @@ class DynamicEachFortune {
   String? iconUrl = 'assets/icon/0.png';
 
   DynamicEachFortune({
+    required this.idx,
     required this.name,
     required this.desc,
     required this.keyword,
@@ -142,6 +136,7 @@ class DynamicEachFortune {
 
   factory DynamicEachFortune.fromJson(Map<String, dynamic> parsedJson) {
     return DynamicEachFortune(
+      idx: 0,
       name: parsedJson['name'] as String ?? 'empty',
       desc: parsedJson['desc'] as String ?? 'empty',
       keyword: parsedJson['keyword'] as String ?? 'empty',

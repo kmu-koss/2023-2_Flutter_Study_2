@@ -1,18 +1,9 @@
 import 'package:flutter/material.dart';
-
-import 'fortune_telling_theme.dart';
+import 'package:fortune_telling/fortune_telling_theme.dart';
 import 'home.dart';
-import 'login.dart';
 
-
-void main() {
-  // 1
-  runApp(const FortuneTelling());
-}
-
-class FortuneTelling extends StatelessWidget {
-  // 2
-  const FortuneTelling({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +13,7 @@ class FortuneTelling extends StatelessWidget {
       theme: theme,
       title: 'Fortune Telling',
       // 4
-      home: const Login(),
+      home: const Home(),
     );
   }
 }

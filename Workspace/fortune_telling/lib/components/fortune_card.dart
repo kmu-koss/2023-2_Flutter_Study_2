@@ -3,14 +3,13 @@ import 'package:intl/intl.dart';
 import '../model/model.dart';
 import 'components.dart';
 
-// import 'fortune_telling_theme.dart';
-// import 'static_fortune_model.dart';
-// import 'graph.dart';
+
 
 class FortuneCard extends StatefulWidget {
-  // final StaticDailyFortune fortune;
-  final DynamicEachFortune fortune;
-  const FortuneCard({super.key, required this.fortune});
+  // final StaticDailyFortune s_fortune;
+  final DynamicEachFortune d_fortune;
+  
+  const FortuneCard({super.key, required this.d_fortune});
 
   @override
   State<StatefulWidget> createState() {
@@ -43,11 +42,11 @@ class _FortuneCardState extends State<FortuneCard> {
                     ),
                     CircleImage(
                       imageRadius: 60,
-                      imageProvider: AssetImage(widget.fortune.iconUrl ?? '', ),
+                      imageProvider: AssetImage(widget.d_fortune.iconUrl ?? '', ),
 
                     ),
                     Text(
-                      '${widget.fortune.name}',
+                      '${widget.d_fortune.name}',
                       style: Theme.of(context).textTheme.displayMedium,
                     ),
                     Center(
@@ -67,7 +66,7 @@ class _FortuneCardState extends State<FortuneCard> {
               ),
               Expanded(
                 child: Text(
-                  '${widget.fortune.desc}',
+                  '${widget.d_fortune.desc}',
                 ),
               ),
             ],

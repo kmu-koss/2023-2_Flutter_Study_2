@@ -10,7 +10,7 @@ class Card3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        constraints: const BoxConstraints.expand(width: 350, height: 450),
+        constraints: const BoxConstraints.expand(width: 350, height: 600),
         decoration: BoxDecoration(
           image: const DecorationImage(
               image: AssetImage('assets/moon_bg.jpg'), fit: BoxFit.cover),
